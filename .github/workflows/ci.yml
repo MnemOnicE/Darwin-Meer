@@ -4,10 +4,24 @@ on:
     paths:
       - 'core_pbd/**'
       - 'fishtank_ui/**'
+  pull_request:
+    paths:
+      - 'core_pbd/**'
+      - 'fishtank_ui/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Dummy step
         run: echo "Path-gated CI"
