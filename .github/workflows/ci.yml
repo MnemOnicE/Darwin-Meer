@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+    paths:
+      - 'core_pbd/**'
+      - 'fishtank_ui/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Dummy step
+        run: echo "Path-gated CI"
