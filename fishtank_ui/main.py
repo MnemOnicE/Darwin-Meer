@@ -2,7 +2,7 @@ import sys
 import os
 
 # Set dummy drivers for headless execution (e.g. testing in CI)
-if os.environ.get('CI') or os.environ.get('HEADLESS'):
+if os.environ.get('CI') == 'true' or os.environ.get('CI') == '1':
     os.environ['SDL_AUDIODRIVER'] = 'dummy'
     os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
@@ -19,7 +19,7 @@ def main():
     # Try to setup Pygame for ModernGL
     # In headless CI environments missing libEGL/libGL, we bypass OpenGL init.
     try:
-        pygame.display.set_mode((800, 600), pygame.OPENGL | pygame.DOUBLEBUF | pygame.HIDDEN)
+        pygame.display.set_mode((800, 600), pygame.OPENGL | pygame.DOUBLEBUF)
         ctx = moderngl.create_context()
         print("ModernGL and Pygame successfully initialized!")
         has_gl = True
