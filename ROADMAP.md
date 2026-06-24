@@ -5,9 +5,9 @@ This roadmap outlines the technical milestones for building the JLSM Engine, adh
 ## Phase 1: Foundation & Boilerplate (Current)
 - [x] Define Architecture and Data Flow schemas.
 - [x] Establish the memory boundary zero-copy strategy.
-- [ ] Scaffold `core_pbd` (Rust library via PyO3/Maturin).
-- [ ] Scaffold `fishtank_ui` (Python ModernGL + Pygame-ce environment).
-- [ ] Set up the "Dead World" local benchmarking framework in Rust.
+- [x] Scaffold `core_pbd` (Rust library via PyO3/Maturin).
+- [x] Scaffold `fishtank_ui` (Python ModernGL + Pygame-ce environment).
+- [x] Set up the "Dead World" local benchmarking framework in Rust.
 
 ## Phase 2: The Data-Oriented Core
 - [ ] Implement the Arena Allocator / ECS backbone in `core_pbd` for storing Joints, Links, and Skins.
