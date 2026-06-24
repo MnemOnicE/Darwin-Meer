@@ -2,8 +2,9 @@ import sys
 import os
 
 # Set dummy drivers for headless execution (e.g. testing in CI)
-os.environ['SDL_AUDIODRIVER'] = 'dummy'
-os.environ['SDL_VIDEODRIVER'] = 'dummy'
+if os.environ.get('CI') or os.environ.get('HEADLESS'):
+    os.environ['SDL_AUDIODRIVER'] = 'dummy'
+    os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
 import moderngl
 import pygame
