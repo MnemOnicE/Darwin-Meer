@@ -10,10 +10,10 @@ This roadmap outlines the technical milestones for building the JLSM Engine, adh
 - [x] Set up the "Dead World" local benchmarking framework in Rust.
 
 ## Phase 2: The Data-Oriented Core
-- [ ] Implement the Arena Allocator / ECS backbone in `core_pbd` for storing Joints, Links, and Skins.
-- [ ] Construct the FFI bridge: Expose internal ECS arrays as zero-copy NumPy buffers to Python.
-- [ ] Build the basic 60Hz loop inside `core_pbd` that simply increments dummy positions.
-- [ ] Bind Python/ModernGL to these buffers to render dummy moving points (verifying the FFI boundary).
+- [x] Implement the Arena Allocator / ECS backbone in `core_pbd` for storing Joints, Links, and Skins.
+- [x] Construct the FFI bridge: Expose internal ECS arrays as zero-copy NumPy buffers to Python.
+- [x] Build the basic 60Hz loop inside `core_pbd` that simply increments dummy positions.
+- [x] Bind Python/ModernGL to these buffers to render dummy moving points (verifying the FFI boundary).
 
 ## Phase 3: Position Based Dynamics (PBD)
 - [ ] Implement spatial hashing for $O(1)$ collision detection between Joints.
