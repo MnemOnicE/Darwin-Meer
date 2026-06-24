@@ -2,6 +2,7 @@ use numpy::PyArray1;
 use pyo3::prelude::*;
 
 /// The central world state for the engine.
+#[pyclass]
 pub struct World {
     // ECS and Grids will go here
 }
