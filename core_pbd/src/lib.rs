@@ -13,7 +13,9 @@ impl Default for World {
     }
 }
 
+#[pymethods]
 impl World {
+    #[new]
     pub fn new() -> Self {
         World {}
     }
