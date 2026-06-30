@@ -14,7 +14,7 @@ hecs = "0.10"
 glam = "0.24"
 
 [dev-dependencies]
-criterion = "0.5"
+criterion = "0.8"
 
 [[bench]]
 name = "dead_world"
