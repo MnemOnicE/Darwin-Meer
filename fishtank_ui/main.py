@@ -40,7 +40,7 @@ def main():
         ctx = moderngl.create_context()
         print("ModernGL and Pygame successfully initialized!")
         has_gl = True
-    except Exception as e:
+    except (moderngl.Error, pygame.error) as e:
         print(
             f"Skipping ModernGL Context Creation (Running in headless/CI environment without libGL): {e}"
         )

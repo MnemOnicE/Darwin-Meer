@@ -80,6 +80,12 @@ impl World {
 
     /// Exposes the joints array as a zero-copy Python memoryview.
     /// This avoids making a copy and can be directly loaded into numpy or OpenGL.
+    ///
+    /// # Safety
+    /// The returned memoryview points directly to the `Vec<Joint>` allocation owned by `World`.
+    /// The caller must guarantee that the `World` instance is not dropped or reallocated
+    /// (e.g., by pushing new elements to the `Vec`) while the `memoryview` is still in use by Python.
+    /// Violating this invariant will result in a dangling pointer.
     pub unsafe fn get_joints_buffer<'py>(
         &mut self, // note: mutable so we can pass WRITE flag if needed, but for now we do READ
         py: Python<'py>,
