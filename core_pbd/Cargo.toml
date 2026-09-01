@@ -11,7 +11,7 @@ crate-type = ["cdylib", "rlib"]
 pyo3 = { version = "0.20", features = ["extension-module"] }
 numpy = "0.20"
 hecs = "0.10"
-glam = "0.24"
+glam = "0.33"
 
 [dev-dependencies]
 criterion = "0.5"
